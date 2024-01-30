@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ADM_PagamentoController;
 use App\Http\Controllers\ProfissionalController;
+use App\Models\ADM_PagamentoModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,12 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 //profissional
-Route::post('profissional/cadastro',[ProfissionalController::class,'store']);
-Route::get('profissional/retornarTodos',[ProfissionalController::class,'retornarTodos']);
-Route::post('procurarProfissional',[ProfissionalController::class, 'pesquisarPorNome']);
-Route::post('procurarProfissional',[ProfissionalController::class, 'pesquisarPorCpf']);
-Route::post('procurarProfissional',[ProfissionalController::class, 'pesquisarPorCelular']);
-Route::post('procurarProfissional',[ProfissionalController::class, 'pesquisarPorEmail']);
+
 Route::post('profissional/esqueciSenha',[ProfissionalController::class, 'esqueciSenha']);
-Route::delete('excluir/{id}Profissional',[ProfissionalController::class, 'excluir']);
-Route::put('atualizarProfissional', [ProfissionalController::class, 'update']);
+
+//CRUD Forma de Pagamento
+Route::post('ADM/tipo_pagamento',[ADM_PagamentoController::class, 'store']);
