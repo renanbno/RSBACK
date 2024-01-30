@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //profissional
-Route::post('cadastro',[ProfissionalController::class,'store']);
+Route::post('profissional/cadastro',[ProfissionalController::class,'store']);
 Route::get('profissional/retornarTodos',[ProfissionalController::class,'retornarTodos']);
 Route::post('procurarProfissional',[ProfissionalController::class, 'pesquisarPorNome']);
 Route::post('procurarProfissional',[ProfissionalController::class, 'pesquisarPorCpf']);
