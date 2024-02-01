@@ -22,4 +22,4 @@ use Illuminate\Support\Facades\Route;
 Route::post('profissional/esqueciSenha',[ProfissionalController::class, 'esqueciSenha']);
 
 //CRUD Forma de Pagamento
-Route::post('ADM/tipo_pagamento',[ADM_PagamentoController::class, 'store']);
+Route::post('adm/tipo_pagamento',[ADM_PagamentoController::class, 'store']);

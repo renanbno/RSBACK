@@ -19,7 +19,7 @@ class ProfissionalController extends Controller
         $profissional = Profissional::where('cpf', '=', $request->cpf)->first();
         
 
-        if(!isset($cliente)){
+        if(!isset($profissional)){
             return response()->json([
                 'status' => false,
                 'message' => "Cadastro não encontrado"

@@ -38,7 +38,7 @@ class ADM_PagamentoController extends Controller
    
 
     
-    public function pesquisarPor(Request $request){
+    public function pesquisarPorNome(Request $request){
         $adm = ADM::where('tipo_pagamento', '>=', $request->tipo_pagamento)->get();
     
         if(count($adm)>0){
@@ -61,7 +61,7 @@ class ADM_PagamentoController extends Controller
         if(!isset($agenda)){
             return response()->json([
                 'status' => false,
-                'message' => "pagamento não reaalizado"
+                'message' => "pagamento não executado"
             ]);
         }
     

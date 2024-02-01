@@ -41,7 +41,7 @@ class ADM_PagamentoRequest extends FormRequest
 
     public Function messages(){
         return [
- 
+            
             'tipo_pagamento.max' => 'o campo nome deve conter no maximo 20 caracteres',
             'tipo_pagamento.min' => 'o campo nome dever conter no minimo 3 caracteres',
  
