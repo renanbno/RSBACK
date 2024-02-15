@@ -1,25 +1,14 @@
 <?php
 
-use App\Http\Controllers\ADM_PagamentoController;
-use App\Http\Controllers\ProfissionalController;
-use App\Models\ADM_PagamentoModel;
+use App\Http\Controllers\AdminController;
+use App\Http\Middleware\IsAuthenticated;
+use App\Http\Middleware\SetSanctumGuard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
+Route::post('/create', [AdminController::class, 'store']);
 
-//profissional
+Route::post('/login',  [AdminController::class, 'login']);
 
-Route::post('profissional/esqueciSenha',[ProfissionalController::class, 'esqueciSenha']);
-
-//CRUD Forma de Pagamento
-Route::post('adm/tipo_pagamento',[ADM_PagamentoController::class, 'store']);
+Route::get('admin/teste', [AdminController::class, 'verificarUsuarioLogado'])->middleware([
+'auth:sanctum',SetSanctumGuard::class,IsAuthenticated::class]);
